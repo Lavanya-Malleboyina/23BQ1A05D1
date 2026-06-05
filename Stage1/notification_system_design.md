@@ -17,7 +17,7 @@ The notification platform supports the following core actions:
 
 ### 1. Create Notification
 
-- Endpoint: `POST /api/notifications`
+- Endpoint: `POST http://4.224.186.213/evaluation-service/notifications`
 - Purpose: Create a new notification for a specific user.
 - Headers:
   - `Content-Type: application/json`
@@ -56,7 +56,7 @@ The notification platform supports the following core actions:
 
 ### 2. Get User Notifications
 
-- Endpoint: `GET /api/notifications`
+- Endpoint: `GET http://4.224.186.213/evaluation-service/notifications`
 - Purpose: Retrieve notifications for the authenticated user.
 - Headers:
   - `Accept: application/json`
@@ -93,7 +93,7 @@ The notification platform supports the following core actions:
 
 ### 3. Mark Notification as Read
 
-- Endpoint: `PATCH /api/notifications/{notificationId}/read`
+- Endpoint: `PATCH http://4.224.186.213/evaluation-service/notifications/{notificationId}/read`
 - Purpose: Mark a single notification as read.
 - Headers:
   - `Content-Type: application/json`
@@ -115,7 +115,7 @@ The notification platform supports the following core actions:
 
 ### 4. Delete Notification
 
-- Endpoint: `DELETE /api/notifications/{notificationId}`
+- Endpoint: `DELETE http://4.224.186.213/evaluation-service/notifications/{notificationId}`
 - Purpose: Remove a notification for the authenticated user.
 - Headers:
   - `Authorization: Bearer <token>`
@@ -123,7 +123,7 @@ The notification platform supports the following core actions:
 
 ### 5. Get Unread Notification Count
 
-- Endpoint: `GET /api/notifications/unread/count`
+- Endpoint: `GET http://4.224.186.213/evaluation-service/notifications/unread/count`
 - Purpose: Return the number of unread notifications for the authenticated user.
 - Headers:
   - `Accept: application/json`
@@ -222,7 +222,7 @@ Real-time delivery should use a websocket-based subscription channel to notify u
 
 ## Notes for Front-End Integration
 
-- Use `GET /api/notifications` to fetch the current notification list.
+- Use `GET http://4.224.186.213/evaluation-service/notifications` to fetch the current notification list.
 - Use websocket/SSE to listen for `notification.created` events and immediately update the UI.
 - Use `PATCH /api/notifications/{notificationId}/read` when a notification is opened.
 - Use `GET /api/notifications/unread/count` for badge counters.
