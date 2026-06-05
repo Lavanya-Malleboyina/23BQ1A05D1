@@ -220,14 +220,6 @@ Real-time delivery should use a websocket-based subscription channel to notify u
 }
 ```
 
-## Notes for Front-End Integration
-
-- Use `GET http://4.224.186.213/evaluation-service/notifications` to fetch the current notification list.
-- Use websocket/SSE to listen for `notification.created` events and immediately update the UI.
-- Use `PATCH /api/notifications/{notificationId}/read` when a notification is opened.
-- Use `GET /api/notifications/unread/count` for badge counters.
-
----
 
 ## Logging Middleware Suggestion
 
